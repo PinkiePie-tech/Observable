@@ -1,0 +1,21 @@
+<div>
+  <h2>Maintenant c'est ton tour ^^</h2>
+  Je vais pas te demander de créer des boutons pour subscribe ou non, mais je
+  vais te demander de t'en servir :P La première étape serait de ne récupérer
+  que les multiples de 5 ( je sais que tu es pas matheuse donc voici la formule
+  value % 5 === 0 )<br />Une fois que cette valeur est récupérée, la stocker
+  dans un tableau et l'afficher (pour rappel, "| json" permet d'afficher un
+  tableau de number sans forcément faire un join())<br /><br />
+  Maintenant je vais te créer une input, cette input, une fois les 10 characters
+  atteint, devra être reset, je vais utiliser un formControl car flemme de faire
+  des trucs de vieux, tu pourras changer si jamais ça te convient pas.<br /><br />
+  <input
+    style="width: 95%"
+    [formControl]="formControl"
+    type="text"
+    placeholder="10 caractères maximum, sinon ..."
+  />
+
+  Je t'ai créer le beahviorSubject dans le service, pour reset une valeur dans
+  un formControl, tu peux utiliser la commande "this.formControl.reset()"
+</div>

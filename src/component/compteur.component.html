@@ -1,0 +1,59 @@
+<div>
+  <h2>Bonjour, je me présente, je suis un compteur</h2>
+  Je suis ici pour compter, mais seulement quand vous me le demanderer lors du
+  clic sur ce bouton.
+  <button (click)="goSubscribeToMyObs()">Je commence à compter</button
+  ><br /><br />
+
+  Normalement, quand tu vas cliquer, mon tableau va recevoir des valeurs, voici
+  à quoi ressemble mon tableau : <br />{{ numberEmit | json }}<br /><br />
+
+  Tu peux décider si tu le souhaites de te désabonner via ce bouton
+  <button (click)="goUnsubscribeToMyObs()">J'arrête de compter</button>
+
+  Si tu fais des tests, tu devrais voir que même si tu n'est pas entrain de
+  compter, lui le compteur fait sa vie, d'ailleurs tu peux voir ce qu'il fait
+  juste en dessous <br /><br />
+  Bonjour, je suis le compteur et je fais ma life, actuellement ma valeur est
+  {{ compteur$ | async }} <br /><br />
+
+  Tu peux donc te rendre compte d'une chose, tant que tu subscribes pas, tu ne
+  récupères pas la valeur au final, mais elle continue de faire sa vie. ce n'est
+  qu'au moment de la souscription que tu vas récupérer la valeur. <br /><br />
+
+  Poussons encore le vice, je peux aussi y rajouter un filtre, je ne récupère la
+  valeur que à une seule condition, là notre condition sera les valeurs pairs,
+  et comme pour l'autre tableau, je vais te laisser décider quand subscribe :D
+  <br /><br />
+
+  tu connais la rengaine, voici le bouton
+  <button (click)="goSubscribeToPairValueMyObs()">
+    Je commence à compter les nombres pairs</button
+  ><br /><br />
+  La valeur : {{ numberPairEmit | json }} <br /><br />
+  Et la désincription
+  <button (click)="goUnsubscribeToPairValueMyObs()">
+    Osef des nombres pairs</button
+  ><br /><br />
+
+  <span style="color: red"
+    >NotaBene : Si tu essayes de te désabonner sans être abonné, ça te mettra
+    une erreur. Et si tu subscribes plusieurs fois, alors tu obtiens autant de
+    fois la valeur que tu as subscribe ^^ par contre, le bouton n'arrête que la
+    dernière souscription, je suis pas allé aussi loin pour un exemple.</span
+  ><br /><br />
+
+  Voici en résumé le fonctionnement de l'app <br /><br />
+  Valeur actuel : {{ compteur$ | async }} <br /><br />
+  Timer normal : {{ numberEmit | json }}<br /><button
+    (click)="goSubscribeToMyObs()"
+  >
+    s'abonner</button
+  ><button (click)="goUnsubscribeToMyObs()">Stop</button><br />
+  <br />
+  Timer pair : {{ numberPairEmit | json }}<br /><button
+    (click)="goSubscribeToPairValueMyObs()"
+  >
+    s'abonner</button
+  ><button (click)="goUnsubscribeToPairValueMyObs()">Stop</button><br /><br />
+</div>
